@@ -10,6 +10,8 @@ Note: If you run npm start and view the app in the browser you'll notice that th
 The starter code shows the following information on the screen:
 
 ### image
+![giftCard](https://user-images.githubusercontent.com/98294205/216839625-edfffb5d-c7ad-48d3-912b-550a347fc508.png)
+
 
 
 
@@ -30,6 +32,10 @@ Your task is to complete the event-handling function for the "Spend Gift Card" b
 When the code lab is successfully completed, after the "Spend Gift Card" button is clicked, the UI should update to show the following information on the screen:
 
 ### image
+![giftCard2](https://user-images.githubusercontent.com/98294205/216839646-747fb298-2053-44fd-b709-fd957da47d00.png)
+
+
+
 
 
 ## In other words, the text that shows on the screen is as follows:

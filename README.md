@@ -1,71 +1,100 @@
-# Getting Started with Create React App
+# Task
+You've revised the useState hook. You've also learned about working with primitive (string) data and with complex data (state stored in objects).
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+In this code lab, you'll practice updating the state stored in an object, based on the user interacting with the app.
 
-## Available Scripts
+This code lab's app shows a Gift Card page of the Little Lemon Restaurant web app, where a visitor initially has a Gift Card that they can use to have a dinner for four.
 
-In the project directory, you can run:
+Note: If you run npm start and view the app in the browser you'll notice that the starting React app works as is.
 
-### `npm start`
+The starter code shows the following information on the screen:
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+### image
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
 
-### `npm test`
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## In other words, the text that shows on the screen is as follows:
 
-### `npm run build`
+Gift Card Page 
+Customer: Jennifer Smith 
+Free dinner for 4 guests 
+To use your coupon, click the button below.  
+Spend Gift Card 
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+The "Spend Gift Card" button is set up to execute a function when clicked. However, that event-handling function is empty.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+That means that when serving the app with the starter code, if you click the "Spend Gift Card" button, there will be no change on the screen.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Your task is to complete the event-handling function for the "Spend Gift Card" button clicks, as detailed in the steps below.
 
-### `npm run eject`
+When the code lab is successfully completed, after the "Spend Gift Card" button is clicked, the UI should update to show the following information on the screen:
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+### image
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+## In other words, the text that shows on the screen is as follows:
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+Gift Card Page 
+Customer: Jennifer Smith 
+Your coupon has been used. 
+Please visit our restaurant to renew your gift card. 
 
-## Learn More
+## Steps
+Step 1
+Open the App.js file.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+Locate the spendGiftCard() function.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+Inside the spendGiftCard() function, invoke the setGiftCard() state-updating function. For now, just invoke it, without passing it any parameters or doing anything else with it.
 
-### Code Splitting
+Step 2
+Inside the setGiftCard() function invocation's parentheses, pass in an arrow function.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+This arrow function has a single parameter, named prevState. After the arrow, add a block of code (starting with an opening curly brace, and ending with a closing curly brace two lines below).
 
-### Analyzing the Bundle Size
+Step 3
+In Step 2, you've added the previous state object as the prevState argument of the arrow function you passed to the setGiftCard() function.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+Now you need to return a new object based on this previous state object.
 
-### Making a Progressive Web App
+For now, in Step 3, you need to just return a copy of the prevState object.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+That means that you need to use the return keyword and a copy of the prevState object, using the rest operator - that is, the ... operator.
 
-### Advanced Configuration
+Step 4
+In Step 3, you returned a copy of the prevState object using the rest operator.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+Now you need to combine this copy of the prevState object with those properties that you want updated.
 
-### Deployment
+Put differently, you need to update some of the key-value pairs that already exist on the state object that were initially passed to the useState() function call.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+For now, in Step 4, update the text property of the state object, as follows:
 
-### `npm run build` fails to minify
+text: "Your coupon has been used."
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
-# usestate-Meta-Content
+Step 5
+In Step 4, you've updated the text property on the state object.
+
+In this step, you need to update the remaining properties on the state object.
+
+You need to update the valid key's value to false.
+
+You need to update the instructions key's value to Please visit our restaurant to renew your gift card..
+
+Step 6
+Save the changes and run the app.
+
+Verify that the completed app behaves as follows:
+
+Initially, the Spend Gift Card button is showing.
+
+Once you click the Spend Gift Card button, the text property value's update will now show the sentence that reads "Your coupon has been used".
+
+Additionally, the instructions key's value's update will now show the text that reads "Please visit our restaurant to renew your gift card."
+
+Finally, since the valid key's value was updated to false, the button is no longer showing.
+
+  
+
+Conclusion
+
